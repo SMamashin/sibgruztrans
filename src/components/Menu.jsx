@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import Logo from '../assets/logo.png';
-import Info from '../assets/info.png';
-import Services from '../assets/saving.png'
-import Contact from '../assets/contact-mail.png'
 import '../styles/MenuBurger.scss';
 
 const MenuBurger = () => {
@@ -21,17 +17,17 @@ const MenuBurger = () => {
             <header className="header">
                 <nav className="nav">
                     <a href="" className="nav__logo"><strong>СИБГРУЗТРАНС</strong>.РФ
-                        <img src={Logo} className="logo_img"/>
+                        <img src="https://smamashin.ru/e/sibgruztrans/assets/logo.png" className="logo_img"/>
                     </a>
                     {/*<a className="nav__logo">Ваш <strong>груз</strong> - наш приоритет</a>*/}
                     <ul className={`nav__menu ${isActive ? 'active' : ''}`}>
                         <li><a href="" className="nav__link" onClick={closeMenu}>
-                            <img src={Info}/>О нас</a></li>
+                            <img src="https://smamashin.ru/e/sibgruztrans/assets/info.png"/>О нас</a></li>
                         <li><a href="" className="nav__link" onClick={closeMenu}>
-                            <img src={Services}/>Услуги</a>
+                            <img src="https://smamashin.ru/e/sibgruztrans/assets/saving.png"/>Услуги</a>
                         </li>
                         <li><a href="" className="nav__link" onClick={closeMenu}>
-                            <img src={Contact}/>Контакты</a></li>
+                            <img src="https://smamashin.ru/e/sibgruztrans/assets/contact-mail.png"/>Контакты</a></li>
                     </ul>
                     <div className={`burger ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
                         <span className="burger__line"></span>

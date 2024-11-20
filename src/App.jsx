@@ -1,4 +1,4 @@
-import styles from './styles/Sibgruztrans.module.scss'
+import './styles/Sibgruztrans.scss';
 import MenuBurger from './components/Menu.jsx';
 import Services from "./components/Services.jsx";
 import About from "./components/About.jsx";
