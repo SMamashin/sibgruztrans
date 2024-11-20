@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "Inter Light";
+  src: url("https://smamashin.ru/e/sibgruztrans/assets/InterLight.ttf") format("opentype")
+}
+
+@font-face {
+  font-family: "Inter Bold";
+  src: url("https://smamashin.ru/e/sibgruztrans/assets/InterBold.ttf") format("opentype")
+}
+
+@font-face {
+  font-family: "Inter Regular";
+  src: url("https://smamashin.ru/e/sibgruztrans/assets/InterRegular.ttf") format("opentype")
+}
+
+body {
+  background-color: #EFEFEF;
+  font-family: "Inter Light";
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+  font-family: "Inter Regular";
+  font-size: 48px;
+  //text-shadow: 0 4px 10px #333;
+
+  img {
+    flex-shrink: 0;
+    width: auto;
+    height: 50px;
+    display: inline;
+    margin-right: 5px;
+    vertical-align: middle;
+    //filter: drop-shadow(0 5px 10px #333);
+  }
+}

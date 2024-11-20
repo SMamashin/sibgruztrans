@@ -20,7 +20,9 @@ const MenuBurger = () => {
         <>
             <header className="header">
                 <nav className="nav">
-                    <a href="" className="nav__logo"><strong>СИБГРУЗТРАНС</strong>.РФ<img src={Logo} className="logo_img"/></a>
+                    <a href="" className="nav__logo"><strong>СИБГРУЗТРАНС</strong>.РФ
+                        <img src={Logo} className="logo_img"/>
+                    </a>
                     {/*<a className="nav__logo">Ваш <strong>груз</strong> - наш приоритет</a>*/}
                     <ul className={`nav__menu ${isActive ? 'active' : ''}`}>
                         <li><a href="" className="nav__link" onClick={closeMenu}>
@@ -38,6 +40,13 @@ const MenuBurger = () => {
                     </div>
                 </nav>
             </header>
+            <section className="header_img">
+                <div className="header_container">
+                    <h2>Ваш <strong>груз</strong> - наш приоритет</h2>
+                    <button>Заказать</button>
+                    <p>Быстро. Безопасно. Доступно.</p>
+                </div>
+            </section>
         </>
     );
 };

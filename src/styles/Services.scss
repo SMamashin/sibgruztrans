@@ -1,0 +1,38 @@
+//.container {
+//  background-color: #fff;
+//}
+
+.workers {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.worker-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 35px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.worker-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.h_services {
+  background-color: red;
+}
+
+//.worker-icon {
+//  width: 80px;
+//  height: 80px;
+//  margin-bottom: 1.5rem;
+//  fill: var(--accent);
+//}

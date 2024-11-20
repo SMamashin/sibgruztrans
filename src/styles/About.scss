@@ -1,0 +1,102 @@
+//.container {
+//  background-color: #fff;
+//}
+@font-face {
+  font-family: "Inter Bold";
+  src: url("https://smamashin.ru/e/sibgruztrans/assets/InterBold.ttf") format("opentype")
+}
+
+.about {
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+
+  @media (max-width: 1200px) {
+    padding: 3rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem 0.5rem;
+    gap: 0.5rem;
+  }
+}
+
+.about-card {
+  display: grid;
+  justify-items: start;
+  background: white;
+  padding: 2rem;
+  border-radius: 35px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+
+  img {
+    margin-top: 5%;
+    width: 200px;
+    height: auto;
+    justify-self: start;
+
+    @media (max-width: 1200px) {
+      width: 150px;
+    }
+
+    @media (max-width: 768px) {
+      width: 100px;
+    }
+
+    @media (max-width: 480px) {
+      width: 80px;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+}
+
+.card_title {
+  font-family: "Inter Bold";
+  text-align: left;
+  font-size: 38px;
+
+  @media (max-width: 1200px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+  }
+}
+
+p {
+  font-size: 30px;
+  text-align: left;
+
+  @media (max-width: 1200px) {
+    font-size: 26px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
+}
