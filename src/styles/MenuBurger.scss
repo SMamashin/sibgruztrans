@@ -14,6 +14,8 @@
   src: url("https://smamashin.ru/e/sibgruztrans/assets/InterBold.ttf") format("opentype")
 }
 
+// Туда, сюда, добавил запросы, изменил размеры и тд
+
 .header {
   position: fixed;
   top: 0;
@@ -25,6 +27,9 @@
   //border: 1px solid #000;
   box-shadow: 0 0 100px #000;
   font-family: "Inter Regular";
+  @media (max-width: 970px) {
+    padding: 1rem;
+  }
 }
 
 .logo_img {
@@ -34,7 +39,7 @@
   display: inline;
   margin-left: 10px;
   vertical-align: middle;
-  @media (max-width: 768px) {
+  @media (max-width: 970px) {
     display: none;
   }
 }
@@ -92,6 +97,9 @@ strong {
   gap: 6px;
   cursor: pointer;
   padding: 5px;
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 }
 
 .burger__line {
@@ -101,7 +109,7 @@ strong {
   transition: all 0.3s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 970px) {
   .burger {
     display: flex;
   }
@@ -145,6 +153,9 @@ strong {
   justify-content: center;
   text-align: center;
   color: white;
+  @media (max-width: 768px) {
+    background-position: top;
+  }
 
   p {
     text-align: center;
@@ -181,7 +192,7 @@ strong {
     }
 
     @media (max-width: 480px) {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
   button {
@@ -215,9 +226,9 @@ strong {
     }
 
     @media (max-width: 480px) {
-      font-size: 6vw;
+      font-size: 5vw;
       border-radius: 5vw;
-      padding: 2vw 8vw;
+      padding: 1vw 4vw;
     }
   }
 

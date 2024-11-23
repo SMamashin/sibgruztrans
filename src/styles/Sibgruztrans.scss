@@ -36,3 +36,22 @@ h1 {
     //filter: drop-shadow(0 5px 10px #333);
   }
 }
+
+// Добавил обертку и адаптив
+.layout {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @media (max-width: 1440px) {
+    max-width: 90%; 
+  }
+
+  @media (max-width: 900px) {
+    max-width: 95%; 
+  }
+
+  @media (max-width: 600px) {
+    max-width: 100%; 
+  }
+}
+
