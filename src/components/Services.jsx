@@ -1,43 +1,39 @@
 import { useState, useEffect } from 'react';
 import '../styles/Services.scss';
-import workersData from '../data/card_data.json';
+import servicesData from '../data/card_data.json';
 
 const Services = () => {
-    const [workers, setWorkers] = useState([]);
-    const [activeWorker, setActiveWorker] = useState(null);
+    const [services, setServices] = useState([]);
+    const [activeServices, setActiveServices] = useState(null);
 
     useEffect(() => {
         // Загрузка данных из JSON файла
-        setWorkers(workersData);
+        setServices(servicesData);
     }, []);
 
-    if (!Array.isArray(workers) || workers.length === 0 || workers.every(worker => !worker.title.trim())) {
+    if (!Array.isArray(services) || services.length === 0 || services.every(service => !service.title.trim())) {
         return <p>Нет доступных работников.</p>;
     }
 
-    const handleCardClick = (workerId) => {
-        setActiveWorker(workerId);
+    const handleCardClick = (serviceId) => {
+        setActiveServices(serviceId);
     };
 
     return (
         <>
             <h1 className="h_services">Наши услуги</h1>
             <div className="container">
-                <section id="workers" className="workers">
-                    {workers.map(worker => (
+                <section id="services" className="services">
+                    {services.map(service => (
                         <div
-                            key={worker.id}
-                            className={`worker-card ${activeWorker === worker.id ? 'active' : ''}`}
-                            onClick={() => handleCardClick(worker.id)}
+                            key={service.id}
+                            className={`service-card ${activeServices === service.id ? 'active' : ''}`}
+                            onClick={() => handleCardClick(service.id)}
                         >
-                            <span className="experience-badge">{worker.experience}</span>
-                            <h3>{worker.title}</h3>
-                            <ul className="expertise-list">
-                                {worker.expertise.map((item, index) => (
-                                    <li key={index}>{item}</li>
-                                ))}
-                            </ul>
-                            <button className="hire-button">Записаться</button>
+                            <h1>{service.title}</h1>
+                            <h2>{service.subtitle}</h2>
+                            <img src={`https://smamashin.ru/e/sibgruztrans/assets/service/${service.image}`} alt={`${service.alt}`} />
+                            <Button>{service.text}</Button>
                         </div>
                     ))}
                 </section>
@@ -45,5 +41,11 @@ const Services = () => {
         </>
     );
 };
+// eslint-disable-next-line react/prop-types
+const Button = ({ children }) => {
+    return <button className="button">{children}</button>;
+};
+
+
 
 export default Services;

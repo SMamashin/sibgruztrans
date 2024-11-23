@@ -1,55 +1,33 @@
 [{
   "id": 1,
-  "first_name": "Angelica",
-  "experience": 0,
-  "title": "Angelica Kopje",
-  "expertise": ["Painting Services"]
+  "title": "Грузоперевозка",
+  "subtitle": "Быстро и удобно",
+  "text": "Перевезти",
+  "image": "Wood Hanmer",
+  "alt": "Перевезти",
+  "expertise": [""]
 }, {
   "id": 2,
-  "first_name": "Wood",
-  "experience": 35,
-  "title": "Wood Hanmer",
-  "expertise": ["Painting Services"]
+  "title": "Грузоперевозка",
+  "subtitle": "Быстро и удобно",
+  "text": "Перевезти",
+  "image": "Wood Hanmer",
+  "alt": "Перевезти",
+  "expertise": [""]
 }, {
   "id": 3,
-  "first_name": "Lacee",
-  "experience": 35,
-  "title": "Lacee Sloper",
-  "expertise":[ "Carpentry Work"]
+  "title": "Грузоперевозка",
+  "subtitle": "Быстро и удобно",
+  "text": "Перевезти",
+  "image": "Wood Hanmer",
+  "alt": "Перевезти",
+  "expertise": [""]
 }, {
   "id": 4,
-  "first_name": "Martica",
-  "experience": 36,
-  "title": "Martica Gear",
-  "expertise": ["Painting Services"]
-}, {
-  "id": 5,
-  "first_name": "Darcee",
-  "experience": 9,
-  "title": "Darcee Yarrington",
-  "expertise":[ "Painting Services"]
-}, {
-  "id": 6,
-  "first_name": "Dale",
-  "experience": 47,
-  "title": "Dale Possel",
-  "expertise":[ "Painting Services"]
-}, {
-  "id": 7,
-  "first_name": "Vassily",
-  "experience": 20,
-  "title": "Vassily Puddicombe",
-"expertise": ["Plumbing Repair"]
-}, {
-  "id": 8,
-  "first_name": "Friedrick",
-  "experience": 2,
-  "title": "Friedrick Theodoris",
-  "expertise": ["Carpentry Work"]
-}, {
-  "id": 9,
-  "first_name": "Thebault",
-  "experience": 7,
-  "title": "Thebault Stuckford",
-  "expertise":[ "Electrical Wiring"]
+  "title": "Грузоперевозка",
+  "subtitle": "Быстро и удобно",
+  "text": "Перевезти",
+  "image": "Wood Hanmer",
+  "alt": "Перевезти",
+  "expertise": [""]
 }]
