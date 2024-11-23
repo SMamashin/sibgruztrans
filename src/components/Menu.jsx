@@ -7,6 +7,14 @@ const MenuBurger = () => {
     const toggleMenu = () => setIsActive(prev => !prev);
     const closeMenu = () => setIsActive(false);
 
+    // name можно использовать как id для секций, соответвенно сделать якорные ссылки
+
+    const navData = [
+        {text: 'О нас', name: 'info'}, 
+        {text: 'Услуги', name: 'saving'}, 
+        {text: 'Контакты', name: 'contact-mail'}
+    ]
+
     return (
         <>
             <header className="header">
@@ -15,10 +23,10 @@ const MenuBurger = () => {
                         <img src="https://smamashin.ru/e/sibgruztrans/assets/logo.png" className="logo_img"/>
                     </a>
                     <ul className={`nav__menu ${isActive ? 'active' : ''}`}>
-                        {[{name: 'О нас', file: 'info'}, {name: 'Услуги', file: 'saving'}, {name: 'Контакты', file: 'contact-mail'}].map((item, index) => (
+                        {navData.map((item, index) => (
                             <li key={index}>
-                                <a href="" className="nav__link" onClick={closeMenu}>
-                                    <img src={`https://smamashin.ru/e/sibgruztrans/assets/${item.file.toLowerCase()}.png`}/>{item.name}
+                                <a href={`#${item.name}`} className="nav__link" onClick={closeMenu}>
+                                    <img src={`https://smamashin.ru/e/sibgruztrans/assets/${item.name.toLowerCase()}.png`}/>{item.text}
                                 </a>
                             </li>
                         ))}
