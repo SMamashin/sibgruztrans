@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../styles/Services.scss";
 import servicesData from "../data/card_data.json";
+import { Button } from "./ui/Button";
 
 const Services = () => {
   const [services, setServices] = useState([]);
@@ -54,9 +55,6 @@ const Services = () => {
     </>
   );
 };
-// eslint-disable-next-line react/prop-types
-const Button = ({ children }) => {
-  return <button className="button">{children}</button>;
-};
+
 
 export default Services;

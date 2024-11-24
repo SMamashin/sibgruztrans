@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../styles/MenuBurger.scss';
+import { Button } from './ui/Button';
 
 const MenuBurger = () => {
     const [isActive, setIsActive] = useState(false);
@@ -41,7 +42,7 @@ const MenuBurger = () => {
             <section className="header_img">
                 <div className="header_container">
                     <h2>Ваш <strong>груз</strong> - наш приоритет</h2>
-                    <button>Заказать</button>
+                    <Button>Заказать</Button>
                     <p>Быстро. Безопасно. Доступно.</p>
                 </div>
             </section>
