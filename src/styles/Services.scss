@@ -1,57 +1,152 @@
-//.container {
-//  background-color: #fff;
-//}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
+@font-face {
+  font-family: "Inter Regular";
+  src: url("https://smamashin.ru/e/sibgruztrans/assets/InterRegular.ttf") format("opentype")
 }
 
-.service-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 43px;
+@font-face {
+  font-family: "Inter Bold";
+  src: url("https://smamashin.ru/e/sibgruztrans/assets/InterBold.ttf") format("opentype")
+}
+
+@font-face {
+  font-family: "Inter Light";
+  src: url("https://smamashin.ru/e/sibgruztrans/assets/InterLight.ttf") format("opentype")
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border: 5px solid #70B6F6;
+  border-radius: 35px;
+  width: 400px;
+  max-width: 1400px;
+  height: 590px;
+  text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: left;
-  transition: all 0.3s ease;
   position: relative;
-  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  .card-image {
+    width: 100%;
+    height: 180px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    object-fit: cover;
+    //border-radius: 35px 35px 0 0;
+    border-bottom: 5px solid #70B6F6;
+  }
+
+  .card-title {
+    font-size: 35px;
+    font-family: "Inter Bold";
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 5px 0;
+    color: rgb(112, 182, 246);
+  }
+
+  .card-description {
+    font-size: 27px;
+    font-family: "Inter Light";
+    font-weight: 700;
+    text-align: left;
+    padding: 0 5px;
+    margin: 5px 5px;
+    color: #666666;
+
+    .highlight {
+      color: #007bff;
+      font-weight: bold;
+    }
+  }
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   }
 
-  img {
+  .card-button {
+    font-family: "Inter Regular";
+    font-size: 26px;
+    font-weight: 600;
+    width: auto;
+    padding: 20px 60px;
+    background: linear-gradient(to right, #70b6f6, #4c6fb7);
+    border: none;
+    color: #ffffff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 2;
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 0;
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 1rem;
+    height: auto;
+    aspect-ratio: 297 / 132;
+    background: url('https://smamashin.ru/e/sibgruztrans/assets/wave.svg') no-repeat center bottom;
+    background-size: cover;
+    z-index: 1;
+    pointer-events: none;
   }
-
-  h1 {
-    font-size: 1.5rem;
-    color: #4a90e2;
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1rem;
-  }
-
 }
 
-.h_services {
-  background-color: red;
+@media (max-width: 768px) {
+  //.card {
+  //  height: auto;
+  //  padding: 15px;
+  //}
+
+  .card-title {
+    font-size: 28px;
+  }
+
+  .card-description {
+    font-size: 22px;
+  }
+
+  .card-button {
+    font-size: 20px;
+    padding: 15px 40px;
+  }
 }
 
-//.service-icon {
-//  width: 80px;
-//  height: 80px;
-//  margin-bottom: 1.5rem;
-//  fill: var(--accent);
-//}
+@media (max-width: 480px) {
+  //.card {
+  //  width: 100%;
+  //  padding: 10px;
+  //}
+
+  .card-title {
+    font-size: 24px;
+  }
+
+  .card-description {
+    font-size: 7px;
+  }
+  //
+  //.card-button {
+  //  font-size: 18px;
+  //  padding: 10px 30px;
+  //}
+}

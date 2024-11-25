@@ -1,28 +1,55 @@
+import React from 'react';
 import '../styles/About.scss';
 
 const About = () => {
+    const cards = [
+        {
+            id: 1,
+            text: "СИБГРУЗТРАНС - это ваш надёжный партнёр для грузоперевозок, который обеспечивает максимальное удобство и безопасность.",
+            highlightWords: ["СИБГРУЗТРАНС", "надёжный", "грузоперевозок", "удобство", "безопасность"],
+            img: "convenient.png",
+        },
+        {
+            id: 2,
+            text: "Мы предлагаем выгодные цены, оперативное выполнение заказов, индивидуальный подход к каждому клиенту.",
+            highlightWords: ["выгодные", "индивидуальный", "каждому"],
+            img: "best-price.png",
+        },
+        {
+            id: 3,
+            text: "Опыт нашей команды в сфере грузоперевозок – это гарантия качественного и своевременного выполнения любых задач.",
+            highlightWords: ["Опыт", "грузоперевозок", "качественного", "своевременного"],
+            img: "quality.png",
+        },
+    ];
+
+    const highlightText = (text, words) => {
+        const regex = new RegExp(`(${words.join("|")})`, "gi");
+        return text.split(regex).map((part, index) =>
+                words.some((word) => word.toLowerCase() === part.toLowerCase()) ? (
+                    <span key={index} className="highlight">
+          {part}
+        </span>
+                ) : (
+                    part
+                )
+        );
+    };
 
     return (
-        <>
-            <div className="container">
-                <section id="about" className="about">
-                    <div className="about-card">
-                        <p><strong className="card_title">СИБГРУЗТРАНС</strong><br/>
-                            - это ваш <strong>надёжный</strong> партрнёр для <strong>грузоперевозок</strong>,
-                            который обеспечитвает максимальное <strong>удобство</strong> и <strong>безопастность</strong>.</p>
-                        <img src='https://smamashin.ru/e/sibgruztrans/assets/convenient.png'/>
+        <div className="container">
+            <section id="about" className="about">
+                {cards.map((card) => (
+                    <div className="about-card" key={card.id}>
+                        <p>{highlightText(card.text, card.highlightWords)}</p>
+                        <img
+                            src={`https://smamashin.ru/e/sibgruztrans/assets/${card.img}`}
+                            alt="about"
+                        />
                     </div>
-                    <div className="about-card">
-                        <p>Мы предлагаем <strong>выгодные</strong> цены, оперативное выполнение заказов, <strong>индивидуальный</strong> подход к <strong>каждому</strong> клиенту..</p>
-                        <img src='https://smamashin.ru/e/sibgruztrans/assets/best-price.png'/>
-                    </div>
-                    <div className="about-card">
-                        <p><strong>Опыт</strong> нашей команды в сфере <strong>грузоперевозок</strong> – это гарантия <strong>качественного</strong> и <strong>своевременного</strong> выполнения любых задач.</p>
-                        <img src="https://smamashin.ru/e/sibgruztrans/assets/quality.png"/>
-                    </div>
-                </section>
-            </div>
-        </>
+                ))}
+            </section>
+        </div>
     );
 };
 

@@ -1,0 +1,136 @@
+.page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh; /* Высота окна браузера */
+  //background-color: #ffffff; /* Цвет фона страницы */
+  margin: 0;
+  padding: 0;
+
+  .form-container {
+    max-width: 700px; /* Увеличиваем ширину формы */
+    width: 100%;
+    padding: 30px; /* Увеличиваем внутренние отступы */
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Более заметная тень */
+    transition: all 0.3s ease;
+    font-size: 25px;
+
+    /* Ограничения на высоту формы */
+    min-height: 250px;
+    max-height: 90vh;
+    overflow-y: auto; /* Прокрутка, если форма становится слишком большой */
+
+    h2 {
+      text-align: center;
+      font-size: 2rem; /* Увеличенный размер заголовка */
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 25px;
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #555;
+        font-size: 1rem;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 1.1rem; /* Увеличиваем шрифт */
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        outline: none;
+        transition: border-color 0.3s ease;
+        text-align: center;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+      }
+
+      input::placeholder {
+        text-align: center;
+        font-size: 25px;
+      }
+
+      /* Иконка галочки */
+      .check-icon {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 18px;
+        color: #3498db;
+      }
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      font-size: 1.2rem; /* Увеличиваем размер кнопки */
+      font-weight: 600;
+      color: #ffffff;
+      background-color: #3498db;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #2980b9;
+      }
+    }
+  }
+
+  /* Мобильная адаптация */
+  @media (max-width: 768px) {
+    .form-container {
+      max-width: 90%; /* Уменьшаем ширину формы на мобильных устройствах */
+      padding: 20px; /* Сокращаем отступы */
+
+      h2 {
+        font-size: 1.6rem; /* Уменьшаем размер заголовка */
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        label {
+          font-size: 0.9rem; /* Уменьшаем шрифт лейблов */
+        }
+
+        input,
+        select {
+          font-size: 1rem; /* Уменьшаем размер шрифта в полях */
+        }
+      }
+
+      button {
+        padding: 12px;
+        font-size: 1rem; /* Уменьшаем размер кнопки */
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form-container {
+      padding: 15px; /* Ещё больше сокращаем отступы */
+
+      h2 {
+        font-size: 1.4rem; /* Ещё меньше заголовок */
+      }
+    }
+  }
+}

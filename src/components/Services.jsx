@@ -1,60 +1,64 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import "../styles/Services.scss";
-import servicesData from "../data/card_data.json";
-import { Button } from "./ui/Button";
 
 const Services = () => {
-  const [services, setServices] = useState([]);
-  const [activeServices, setActiveServices] = useState(null);
+  const cards = [
+    {
+      id: 1,
+      title: "ГРУЗОПЕРЕВОЗКА",
+      description: "Безопасность: надежные упаковочные материалы и специальные методы фиксации грузов.",
+      highlightWords: ["Безопастность","надежные", "специальные"], // Слова для выделения
+      img: "blue_truck.jpg",
+    },
+    {
+      id: 2,
+      title: "СБОРКА МЕБЕЛИ",
+      description: "Услуга предлагает профессиональное выполнение монтажа различной мебели интерьера.",
+      highlightWords: ["Услуга","профессиональное", "различной"], // Слова для выделения
+      img: "meb.webp",
+    },
+    {
+      id: 3,
+      title: "РАЗНОРАБОЧИЙ",
+      description:
+          "Услуга включает в себя предоставление квалифицированного рабочего на временной основе.",
+      highlightWords: ["Услуга","квалифицированного", "временной", "постоянной", "различных"], // Слова для выделения
+      img: "rab.webp",
+    },
+  ];
 
-  useEffect(() => {
-    // Загрузка данных из JSON файла
-    setServices(servicesData);
-  }, []);
-
-  if (
-    !Array.isArray(services) ||
-    services.length === 0 ||
-    services.every((service) => !service.title.trim())
-  ) {
-    return <p>Нет доступных работников.</p>;
-  }
-
-  const handleCardClick = (serviceId) => {
-    setActiveServices(serviceId);
+  const highlightText = (text, words) => {
+    const regex = new RegExp(`(${words.join("|")})`, "gi");
+    return text.split(regex).map((part, index) =>
+        words.some((word) => word.toLowerCase() === part.toLowerCase()) ? (
+            <span key={index} className="highlight">
+          {part}
+        </span>
+        ) : (
+            part
+        )
+    );
   };
 
   return (
-    <>
-      <h1 className="h_services">Наши услуги</h1>
-      <div className="container">
-        <section id="services" className="services">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className={`service-card ${
-                activeServices === service.id ? "active" : ""
-              }`}
-              onClick={() => handleCardClick(service.id)}
-            >
-              <div>
-                <h1>{service.title}</h1>
-                <h2>{service.subtitle}</h2>
-              </div>
-              <div>
-                <img
-                  src={`https://smamashin.ru/e/sibgruztrans/assets/service/${service.image}`}
-                  alt={`${service.alt}`}
-                />
-                <Button>{service.text}</Button>
-              </div>
+      <div className="card-container">
+        {cards.map((card) => (
+            <div className="card" key={card.id}>
+              <img
+                  src={`https://smamashin.ru/e/sibgruztrans/assets/${card.img}`}
+                  alt={card.title}
+                  className="card-image"
+              />
+              <h3 className="card-title">{card.title}</h3>
+              <hr />
+              <p className="card-description">
+                {highlightText(card.description, card.highlightWords)}
+              </p>
+              <button className="card-button">ПЕРЕЙТИ</button>
             </div>
-          ))}
-        </section>
+        ))}
       </div>
-    </>
   );
 };
-
 
 export default Services;

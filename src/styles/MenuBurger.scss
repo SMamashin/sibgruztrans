@@ -146,7 +146,7 @@ strong {
 
 .header_img {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.94)),
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
   url('https://smamashin.ru/e/sibgruztrans/assets/blue_truck.jpg') center/cover;
   display: flex;
   align-items: center;
@@ -184,15 +184,15 @@ strong {
     margin-bottom: 10%;
 
     @media (max-width: 1200px) {
-      font-size: 40px;
+      font-size: 45px;
     }
 
     @media (max-width: 768px) {
-      font-size: 35px;
+      font-size: 50px;
     }
 
     @media (max-width: 480px) {
-      font-size: 16px;
+      font-size: 5vw;
     }
   }
   button {
@@ -239,15 +239,15 @@ strong {
     font-family: "Inter Regular";
 
     @media (max-width: 1200px) {
-      font-size: 20px;
+      font-size: 26px;
     }
 
     @media (max-width: 768px) {
-      font-size: 16px;
+      font-size: 28px;
     }
 
     @media (max-width: 480px) {
-      font-size: 14px;
+      font-size: 4vw;
     }
   }
 }
