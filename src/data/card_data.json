@@ -1,0 +1,33 @@
+[{
+  "id": 1,
+  "title": "Грузоперевозка",
+  "subtitle": "Быстро и удобно",
+  "text": "Перевезти",
+  "image": "blue_truck.jpg",
+  "alt": "Перевезти",
+  "expertise": [""]
+}, {
+  "id": 2,
+  "title": "Разнорабочие",
+  "subtitle": "Опытные люди, знающие толк.",
+  "text": "Нанять",
+  "image": "Wood Hanmer",
+  "alt": "Перевезти",
+  "expertise": [""]
+}, {
+  "id": 3,
+  "title": "Грузоперевозка",
+  "subtitle": "Быстро и удобно",
+  "text": "Перевезти",
+  "image": "Wood Hanmer",
+  "alt": "Перевезти",
+  "expertise": [""]
+}, {
+  "id": 4,
+  "title": "Грузоперевозка",
+  "subtitle": "Быстро и удобно",
+  "text": "Перевезти",
+  "image": "Wood Hanmer",
+  "alt": "Перевезти",
+  "expertise": [""]
+}]
