@@ -4,9 +4,17 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
+@font-face {
+  font-family: "Inter Regular";
+  src: url("https://smamashin.ru/e/sibgruztrans/assets/InterRegular.ttf") format("opentype")
 }
+
+@font-face {
+  font-family: "Inter Bold";
+  src: url("https://smamashin.ru/e/sibgruztrans/assets/InterBold.ttf") format("opentype")
+}
+
+// Туда, сюда, добавил запросы, изменил размеры и тд
 
 .header {
   position: fixed;
@@ -18,6 +26,10 @@ body {
   z-index: 1000;
   //border: 1px solid #000;
   box-shadow: 0 0 100px #000;
+  font-family: "Inter Regular";
+  @media (max-width: 970px) {
+    padding: 1rem;
+  }
 }
 
 .logo_img {
@@ -27,6 +39,9 @@ body {
   display: inline;
   margin-left: 10px;
   vertical-align: middle;
+  @media (max-width: 970px) {
+    display: none;
+  }
 }
 
 .nav {
@@ -39,9 +54,10 @@ body {
 
 .nav__logo {
   color: #333;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
+  font-family: "Inter Bold";
 }
 
 strong {
@@ -81,6 +97,9 @@ strong {
   gap: 6px;
   cursor: pointer;
   padding: 5px;
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 }
 
 .burger__line {
@@ -90,7 +109,7 @@ strong {
   transition: all 0.3s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 970px) {
   .burger {
     display: flex;
   }
@@ -124,3 +143,112 @@ strong {
     transform: rotate(-45deg) translate(8px, -8px);
   }
 }
+
+.header_img {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.94)),
+  url('https://smamashin.ru/e/sibgruztrans/assets/blue_truck.jpg') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  @media (max-width: 768px) {
+    background-position: top;
+  }
+
+  p {
+    text-align: center;
+    font-size: 2vw;
+    margin: 1vw;
+
+    @media (max-width: 1200px) {
+      font-size: 3vw;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 4vw;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 5vw;
+    }
+  }
+}
+
+.header_container {
+  h2 {
+    font-family: "Inter Bold";
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 10%;
+
+    @media (max-width: 1200px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 35px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 16px;
+    }
+  }
+  button {
+    background-color: #49A2F4;
+    color: #fff;
+    font-size: 3vw;
+    border-radius: 2vw;
+    padding: 0.2vw 4vw;
+    width: auto;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    margin: 3%;
+
+    &:hover {
+      opacity: 0.9;
+      cursor: pointer;
+    }
+
+    @media (max-width: 1200px) {
+      font-size: 4vw;
+      border-radius: 3vw;
+      padding: 0.5vw 5vw;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 5vw;
+      border-radius: 4vw;
+      padding: 1vw 6vw;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 5vw;
+      border-radius: 5vw;
+      padding: 1vw 4vw;
+    }
+  }
+
+  p {
+    margin: 2%;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-family: "Inter Regular";
+
+    @media (max-width: 1200px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+}
+
