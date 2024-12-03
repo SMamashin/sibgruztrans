@@ -1,43 +1,64 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/Services.scss';
-import workersData from '../data/card_data.json';
+import React from "react";
+import "../styles/Services.scss";
 
 const Services = () => {
-    const [workers, setWorkers] = useState([]);
-    const [activeWorker, setActiveWorker] = useState(null);
+  const cards = [
+    {
+      id: 1,
+      title: "ГРУЗОПЕРЕВОЗКА",
+      description: "Безопасность: надежные упаковочные материалы и специальные методы фиксации грузов.",
+      highlightWords: ["Безопастность","надежные", "специальные"],
+      img: "blue_truck.jpg",
+    },
+    // {
+    //   id: 2,
+    //   title: "СБОРКА МЕБЕЛИ",
+    //   description: "Услуга предлагает профессиональное выполнение монтажа различной мебели интерьера.",
+    //   highlightWords: ["Услуга","профессиональное", "различной"],
+    //   img: "meb.webp",
+    // },
+    {
+      id: 3,
+      title: "РАЗНОРАБОЧИЙ",
+      description:
+          "Услуга включает в себя предоставление квалифицированного рабочего на временной основе.",
+      highlightWords: ["Услуга","квалифицированного", "временной", "постоянной", "различных"],
+      img: "rab.webp",
+    },
+  ];
 
-    useEffect(() => {
-        // Загрузка данных из JSON файла
-        setWorkers(workersData);
-    }, []);
-
-    const handleCardClick = (workerId) => {
-        setActiveWorker(workerId);
-    };
-
-    return (
-        <h1 className="h_services">Наши услуги</h1>
-        // <div className="container">
-        //     <section id="workers" className="workers">
-        //         {workers.map(worker => (
-        //             <div
-        //                 key={worker.id}
-        //                 className={`worker-card ${activeWorker === worker.id ? 'active' : ''}`}
-        //                 onClick={() => handleCardClick(worker.id)}
-        //             >
-        //                 <span className="experience-badge">{worker.experience}</span>
-        //                 <h3>{worker.title}</h3>
-        //                 <ul className="expertise-list">
-        //                     {worker.expertise.map((item, index) => (
-        //                         <li key={index}>{item}</li>
-        //                     ))}
-        //                 </ul>
-        //                 <button className="hire-button">Записаться</button>
-        //             </div>
-        //         ))}
-        //     </section>
-        // </div>
+  const highlightText = (text, words) => {
+    const regex = new RegExp(`(${words.join("|")})`, "gi");
+    return text.split(regex).map((part, index) =>
+        words.some((word) => word.toLowerCase() === part.toLowerCase()) ? (
+            <span key={index} className="highlight">
+          {part}
+        </span>
+        ) : (
+            part
+        )
     );
+  };
+
+  return (
+      <div className="card-container">
+        {cards.map((card) => (
+            <div className="card" key={card.id} >
+              <img
+                  src={`https://smamashin.ru/e/sibgruztrans/assets/${card.img}`}
+                  alt={card.title}
+                  className="card-image"
+              />
+              <h3 className="card-title">{card.title}</h3>
+              <hr />
+              <p className="card-description">
+                {highlightText(card.description, card.highlightWords)}
+              </p>
+              <button className="card-button">ПЕРЕЙТИ</button>
+            </div>
+        ))}
+      </div>
+  );
 };
 
 export default Services;

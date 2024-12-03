@@ -1,6 +1,3 @@
-//.container {
-//  background-color: #fff;
-//}
 @font-face {
   font-family: "Inter Bold";
   src: url("https://smamashin.ru/e/sibgruztrans/assets/InterBold.ttf") format("opentype")
@@ -21,12 +18,12 @@
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
-    gap: 1rem;
+    gap: 2.5rem;
   }
 
   @media (max-width: 480px) {
     padding: 1rem 0.5rem;
-    gap: 0.5rem;
+    gap: 3rem;
   }
 }
 
@@ -56,9 +53,16 @@
     }
 
     @media (max-width: 480px) {
-      width: 80px;
+      //width: 80px;
+      display: none;
     }
   }
+
+  .highlight {
+    color: #007bff;
+    font-weight: bold;
+  }
+
 
   &:hover {
     transform: translateY(-10px);
@@ -76,11 +80,11 @@
   }
 
   @media (max-width: 768px) {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   @media (max-width: 480px) {
-    font-size: 24px;
+    font-size: 40px;
   }
 }
 
@@ -93,10 +97,10 @@ p {
   }
 
   @media (max-width: 768px) {
-    font-size: 22px;
+    font-size: 30px;
   }
 
   @media (max-width: 480px) {
-    font-size: 18px;
+    font-size: px;
   }
 }

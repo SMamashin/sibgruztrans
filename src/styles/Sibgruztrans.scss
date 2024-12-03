@@ -13,18 +13,32 @@
   src: url("https://smamashin.ru/e/sibgruztrans/assets/InterRegular.ttf") format("opentype")
 }
 
+
 body {
-  background-color: #EFEFEF;
   font-family: "Inter Light";
+  background-image: url('https://smamashin.ru/e/sibgruztrans/assets/bg.svg');
+  background-attachment: fixed;
+  background-color: rgba(5, 5, 5, 0.1);
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
 }
 
 h1 {
+  color: #fff;
   display: flex;
   justify-content: center;
   margin: 50px auto;
+  padding: 5px;
   font-family: "Inter Regular";
-  font-size: 48px;
-  //text-shadow: 0 4px 10px #333;
+  text-transform: uppercase;
+  font-size: 50px;
+  background: linear-gradient(to right, #70b6f6, #4c6fb7);
 
   img {
     flex-shrink: 0;
@@ -33,13 +47,19 @@ h1 {
     display: inline;
     margin-right: 5px;
     vertical-align: middle;
-    //filter: drop-shadow(0 5px 10px #333);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 30px;
   }
 }
 
-// Добавил обертку и адаптив
 .layout {
-  max-width: 1440px;
+  max-width: 1600px;
   margin: 0 auto;
 
   @media (max-width: 1440px) {
@@ -55,3 +75,16 @@ h1 {
   }
 }
 
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #d1d1d1;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #49A2F4;
+  border-radius: 20px;
+  border: 3px solid #d1d1d1;
+}
