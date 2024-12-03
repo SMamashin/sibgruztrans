@@ -15,9 +15,9 @@
 
 .card-container {
   display: flex;
-  justify-content: center; /* Центрируем карточки */
-  flex-wrap: wrap; /* Обеспечиваем возможность переноса */
-  gap: 4rem; /* Устанавливаем расстояние между карточками */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4rem;
   padding: 20px;
 }
 
@@ -131,28 +131,28 @@
   .card {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Начало содержимого карточки */
-    align-items: center; /* Центровка по горизонтали */
-    height: 380px; /* Убираем фиксированную высоту */
+    justify-content: flex-start;
+    align-items: center;
+    height: 380px;
     gap: 2 rem;
 
     .card-title {
       font-size: 24px;
-      margin: 10px 0; /* Добавляем отступы */
-      text-align: center; /* Центрируем текст */
-      color: rgb(112, 182, 246); /* Оставляем исходный цвет */
+      margin: 10px 0;
+      text-align: center;
+      color: rgb(112, 182, 246);
     }
   }
 
 
   .card-description {
-    display: none; /* Полностью убираем описание */
+    display: none;
   }
 
   .card-button {
     font-size: 18px;
     padding: 5px 10px;
-    margin-top: auto; /* Кнопка остаётся внизу */
+    margin-top: auto;
   }
 }
 

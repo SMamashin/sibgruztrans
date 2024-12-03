@@ -5,14 +5,13 @@ const Form = () => {
     const [activeTab, setActiveTab] = useState("cargo");
     const [isMobile, setIsMobile] = useState(false);
 
-    // Функция для отслеживания изменений ширины экрана
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768); // Устанавливаем состояние для мобильных
+            setIsMobile(window.innerWidth <= 768);
         };
 
         window.addEventListener("resize", handleResize);
-        handleResize(); // Инициализация при первом рендере
+        handleResize();
 
         return () => {
             window.removeEventListener("resize", handleResize);
@@ -63,7 +62,6 @@ const Form = () => {
                     </div>
                 )}
 
-                {/* Кнопка отправки */}
                 <button className="submit-btn">Отправить</button>
             </div>
         </div>
